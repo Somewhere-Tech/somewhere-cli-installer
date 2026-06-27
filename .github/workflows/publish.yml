@@ -1,0 +1,28 @@
+# Publish `somewhere-cli` (the vanity installer) to npm WITH PROVENANCE.
+# Same pattern as @somewhere-tech/cli — your security tool should have provenance
+# all the way down. Setup: add NPM_TOKEN secret; repo must be public.
+# Release: bump version, then `git tag v0.15.0 && git push origin v0.15.0`.
+name: Publish to npm
+
+on:
+  push:
+    tags: ['v*.*.*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write # OIDC — required for npm provenance
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install
+      - run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

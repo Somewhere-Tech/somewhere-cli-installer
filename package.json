@@ -1,0 +1,36 @@
+{
+  "name": "somewhere-cli",
+  "version": "0.15.0",
+  "description": "Friendly installer for the somewhere.tech CLI — gives you the somewhere, sw, swpx, and swpm commands. Thin wrapper around @somewhere-tech/cli.",
+  "keywords": [
+    "somewhere",
+    "somewhere.tech",
+    "cli",
+    "swpx",
+    "swpm",
+    "npm",
+    "security"
+  ],
+  "homepage": "https://somewhere.tech",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Somewhere-Tech/somewhere-cli-installer.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "somewhere": "bin/somewhere.js",
+    "sw": "bin/sw.js",
+    "swpx": "bin/swpx.js",
+    "swpm": "bin/swpm.js"
+  },
+  "files": [
+    "bin"
+  ],
+  "dependencies": {
+    "@somewhere-tech/cli": ">=0.14.0 <1.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
