@@ -1,6 +1,6 @@
 {
   "name": "somewhere-cli",
-  "version": "0.15.0",
+  "version": "0.15.1",
   "description": "Friendly installer for the somewhere.tech CLI — gives you the somewhere, sw, swpx, and swpm commands. Thin wrapper around @somewhere-tech/cli.",
   "keywords": [
     "somewhere",
